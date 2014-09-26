@@ -25,8 +25,8 @@ module.exports.passport = {
     protocol: 'oauth',
     strategy: require('passport-twitter').Strategy,
     options: {
-      consumerKey: 'your-consumer-key',
-      consumerSecret: 'your-consumer-secret'
+      consumerKey: 'H0dxAU9nP8nnin8uGpkVhAET8',
+      consumerSecret: 'sT0IbaYThulLSKcFjKG7RFNXomXiUD40l904sxPBKivXBSiZfX'
     }
   },
 

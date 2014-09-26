@@ -121,20 +121,60 @@ var AuthController = {
     function tryAgain () {
       // If an error was thrown, redirect the user to the login which should
       // take care of rendering the error messages.
-      req.flash('form', req.body);
-      res.redirect(req.param('action') === 'register' ? '/register' : '/login');
+        if (typeof error === 'object' && error !== null) {
+            error = error.toString();
+        }
+
+        req.flash('form', req.body);
+        req.flash('error', error);
+        if (req.param('action') === 'register') {
+            if (req.session.businessInvite) {
+                res.redirect('/referrer/join/' + req.session.businessInvite);
+            } else {
+                res.redirect('/register');
+            }
+        } else {
+            res.redirect('/login');
+        }
     }
 
+      function login(user) {
+          req.login(user, function (loginErr) {
+              if (loginErr) {
+                  console.log(loginErr);
+                  return tryAgain('Error with logging in');
+              }
+
+              // Upon successful login, send the user to the homepage were req.user
+              // will available.
+              req.session.authenticated = true;
+              if (req.session.loginBackUrl) {
+                  res.redirect(req.session.loginBackUrl);
+              } else {
+                  res.redirect('/');
+              }
+
+          });
+      }
+
+      if (req.param('action') === 'register') {
+          if (req.param("password") !== req.param("confirmPassword")) {
+
+              return tryAgain('Passwords do not match');
+          }
+      }
+
     passport.callback(req, res, function (err, user) {
-      if (err) return tryAgain();
+        if (err) {
+            if (err.raw && err.raw.code == '11000') {
+                var message = 'User with this email already exists';
+            } else {
+                var message = err.toString();
+            }
+            return tryAgain(message);
+        }
 
-      req.login(user, function (loginErr) {
-        if (loginErr) return tryAgain();
-
-        // Upon successful login, send the user to the homepage were req.user
-        // will available.
-        res.redirect('/');
-      });
+        login(user);
     });
   }
 };

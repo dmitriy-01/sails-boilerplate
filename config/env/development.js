@@ -21,4 +21,10 @@ module.exports = {
   //   connection: 'someMongodbServer'
   // }
 
+  log: {
+      level: 'info' //silly, verbose, info, debug, warn, error
+  },
+
+    livereloadPath: "//localhost:35729/livereload.js"
+
 };
