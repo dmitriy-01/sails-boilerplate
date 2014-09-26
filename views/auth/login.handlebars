@@ -1,0 +1,48 @@
+<br /><br /><br />
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-4 col-md-offset-4">
+
+            <h3>Please Log In</h3>
+            <hr />
+
+            <div class="row">
+                {{#each providers}}
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <a href="/auth/{{slug}}" class="btn btn-primary btn-block">
+                            <i class="fa fa-lg {{icon}}" style="{{style}}"></i> &nbsp; {{name}}
+                        </a>
+                        <br />
+                    </div>
+                {{/each}}
+            </div>
+            <div class="login-or">
+                <hr class="hr-or">
+                <span class="span-or">or</span>
+            </div>
+
+            <form role="form" action="/auth/local" method="post">
+                <div class="form-group">
+                    <label for="inputUsernameEmail">Email</label>
+                    <input name="identifier" type="text" class="form-control" id="inputUsernameEmail">
+                </div>
+                <div class="form-group">
+                    <a class="pull-right" href="#">Forgot password?</a>
+                    <label for="inputPassword">Password</label>
+                    <input name="password" type="password" class="form-control" id="inputPassword">
+                </div>
+                <div class="checkbox pull-right">
+                    <label>
+                        <input type="checkbox">
+                        Remember me </label>
+                </div>
+                <button type="submit" class="btn btn btn-success">
+                    Log In
+                </button>
+            </form>
+
+        </div>
+
+    </div>
+</div>
