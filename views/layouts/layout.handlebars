@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>New Sails App</title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
@@ -28,62 +28,76 @@
     -->
 
     <!--STYLES-->
+    <link rel="stylesheet" href="/styles/custom/nprogress.css">
+    <link rel="stylesheet" href="/styles/custom/nv.d3.css">
+    <link rel="stylesheet" href="/styles/importer.css">
     <!--STYLES END-->
-  </head>
+</head>
 
-  <body>
-    {{{body}}}
+<body>
+{{{body}}}
 
 
 
-    <!--
-        Client-side Templates
-        ========================
+<!--
+    Client-side Templates
+    ========================
 
-        HTML templates are important prerequisites of modern, rich client applications.
-        To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
-        that you load these templates client-side.
+    HTML templates are important prerequisites of modern, rich client applications.
+    To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
+    that you load these templates client-side.
 
-        By default, your Gruntfile is configured to automatically load and precompile
-        client-side JST templates in your `assets/linker/templates` folder, then
-        include them here automatically (between TEMPLATES and TEMPLATES END).
-        
-        To customize this behavior to fit your needs, just edit your Gruntfile.
-        For example, here are a few things you could do:
+    By default, your Gruntfile is configured to automatically load and precompile
+    client-side JST templates in your `assets/linker/templates` folder, then
+    include them here automatically (between TEMPLATES and TEMPLATES END).
 
-            + Import templates from other directories
-            + Use a different template engine (handlebars, jade, dust, etc.)
-            + Internationalize your client-side templates using a server-side
-              stringfile before they're served.
-    -->
+    To customize this behavior to fit your needs, just edit your Gruntfile.
+    For example, here are a few things you could do:
 
-    <!--TEMPLATES-->
-    <!--TEMPLATES END-->
+        + Import templates from other directories
+        + Use a different template engine (handlebars, jade, dust, etc.)
+        + Internationalize your client-side templates using a server-side
+          stringfile before they're served.
+-->
 
-    <!--
+<!--TEMPLATES-->
 
-      Client-side Javascript
-      ========================
+<!--TEMPLATES END-->
 
-      You can always bring in JS files manually with `script` tags, or asynchronously
-      on the client using a solution like AMD (RequireJS).  Or, if you like, you can 
-      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+<!--
 
-      By default, filesin your `assets/linker/js` folder are included here
-      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
-      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
-      and concatenated into a single file.
-      
-      To customize any part of the built-in behavior, just edit your Gruntfile.
-      For example, here are a few things you could do:
-          
-          + Change the order of your scripts
-          + Import scripts from other directories
-          + Use a different preprocessor, like TypeScript
+  Client-side Javascript
+  ========================
 
-    -->
+  You can always bring in JS files manually with `script` tags, or asynchronously
+  on the client using a solution like AMD (RequireJS).  Or, if you like, you can
+  take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
 
-    <!--SCRIPTS-->
-    <!--SCRIPTS END-->
-  </body>
+  By default, filesin your `assets/linker/js` folder are included here
+  automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+  CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+  and concatenated into a single file.
+
+  To customize any part of the built-in behavior, just edit your Gruntfile.
+  For example, here are a few things you could do:
+
+      + Change the order of your scripts
+      + Import scripts from other directories
+      + Use a different preprocessor, like TypeScript
+
+-->
+
+<!--SCRIPTS-->
+<script src="/js/dependencies/sails.io.js"></script>
+<script src="/js/dependencies/00-handlebars-v1.3.0.js"></script>
+<script src="/js/dependencies/01-jquery-1.11.1.min.js"></script>
+<script src="/js/dependencies/02-bootstrap.js"></script>
+<script src="/js/dependencies/03-nprogress.js"></script>
+<script src="/js/dependencies/04-d3.js"></script>
+<script src="/js/dependencies/05-nv.d3.js"></script>
+<script src="/js/dependencies/06-bootstrap-growl.js"></script>
+<script src="/js/dependencies/07-jquery-ui.js"></script>
+<script src="/js/ratings-s.js"></script>
+<!--SCRIPTS END-->
+</body>
 </html>
