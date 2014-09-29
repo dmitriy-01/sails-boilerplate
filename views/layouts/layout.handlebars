@@ -39,12 +39,10 @@
 {{> nav}}
 
 
-<div class="container-fluid">
+<div class="container">
     <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-            {{> sidebar}}
-        </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+        <div class="col-sm-9 col-md-10 main">
             <div id="ajax-alert"></div>
             {{#if errors}}
                 <div class="alert alert-danger alert-dismissible" role="alert">
@@ -57,33 +55,11 @@
             {{/if}}
             {{{ body }}}
         </div>
+        <div class="col-sm-3 col-md-2 sidebar">
+            {{> sidebar}}
+        </div>
     </div>
 </div>
-
-<!--
-    Client-side Templates
-    ========================
-
-    HTML templates are important prerequisites of modern, rich client applications.
-    To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
-    that you load these templates client-side.
-
-    By default, your Gruntfile is configured to automatically load and precompile
-    client-side JST templates in your `assets/linker/templates` folder, then
-    include them here automatically (between TEMPLATES and TEMPLATES END).
-
-    To customize this behavior to fit your needs, just edit your Gruntfile.
-    For example, here are a few things you could do:
-
-        + Import templates from other directories
-        + Use a different template engine (handlebars, jade, dust, etc.)
-        + Internationalize your client-side templates using a server-side
-          stringfile before they're served.
--->
-
-<!--TEMPLATES-->
-
-<!--TEMPLATES END-->
 
 <!--
 
@@ -120,5 +96,35 @@
 <script src="/js/dependencies/07-jquery-ui.js"></script>
 <script src="/js/my-app.js"></script>
 <!--SCRIPTS END-->
+
+<!--
+    Client-side Templates
+    ========================
+
+    HTML templates are important prerequisites of modern, rich client applications.
+    To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
+    that you load these templates client-side.
+
+    By default, your Gruntfile is configured to automatically load and precompile
+    client-side JST templates in your `assets/linker/templates` folder, then
+    include them here automatically (between TEMPLATES and TEMPLATES END).
+
+    To customize this behavior to fit your needs, just edit your Gruntfile.
+    For example, here are a few things you could do:
+
+        + Import templates from other directories
+        + Use a different template engine (handlebars, jade, dust, etc.)
+        + Internationalize your client-side templates using a server-side
+          stringfile before they're served.
+-->
+
+<!--TEMPLATES-->
+
+<!--TEMPLATES END-->
+
+{{#if sails.config.livereloadPath}}
+    <script src="{{sails.config.livereloadPath}}"></script>
+{{/if}}
+
 </body>
 </html>

@@ -11,8 +11,12 @@ module.exports = {
      * `SiteController.index()`
      */
     index: function (req, res) {
-        res.view({
-            layout: 'layout-site'
+        Question.find({}).exec(function findCB(err, questions) {
+            if (err)  res.view({errors: err});
+
+            res.view({
+                questions: questions
+            });
         });
     }
 };

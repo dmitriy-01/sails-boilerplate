@@ -2,7 +2,13 @@
     <li class="{{#ifCond 'dashboard' '==' view.path}}active{{/ifCond}}">
         <a href="/dashboard">
             <i class="fa fa-fw fa-dashboard"></i>&nbsp;
-            Dashboard
+            {{__ 'Dashboard'}}
+        </a>
+    </li>
+    <li class="{{#ifCond 'question/add' '==' view.path}}active{{/ifCond}}">
+        <a href="/question/add">
+            <i class="fa fa-fw fa-plus"></i>&nbsp;
+            {{__ 'AskQuestion'}}
         </a>
     </li>
 </ul>
