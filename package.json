@@ -32,10 +32,10 @@
     "sails-mongo": "^0.10.4",
     "validator": "^3.19.0"
   },
-  "name": "ratings-s",
+  "name": "my-app",
   "private": true,
-  "version": "0.0.0",
-  "description": "a Sails application",
+  "version": "0.1.0",
+  "description": "a Sails application Boilerplate",
   "keywords": [],
   "scripts": {
     "start": "node app.js",
@@ -44,8 +44,8 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/dk/ratings-s.git"
+    "url": "git://github.com/websquared/sails-boilerplate.git"
   },
   "author": "dk",
-  "license": ""
+  "license": "MIT"
 }
