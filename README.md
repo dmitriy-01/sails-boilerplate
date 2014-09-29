@@ -19,4 +19,11 @@ a [Sails](http://sailsjs.org) application with some pre-installed packages
 - Bootstrap growl - notifications
 - JqueryUI - drag and drop functionality
 
+---
+
 ![screenshot](https://raw.githubusercontent.com/websquared/sails-boilerplate/master/assets/images/readme-screenshot.png)
+
+---
+
+Suggestions and comments are welcome!
+
