@@ -29,6 +29,7 @@
     "sails-disk": "~0.10.0",
     "sails-generate-auth": "^0.1.6",
     "sails-generate-views-handlebars": "https://github.com/jmtexier/sails-generate-views-handlebars/archive/master.tar.gz",
+    "sails-mongo": "^0.10.4",
     "validator": "^3.19.0"
   },
   "name": "ratings-s",

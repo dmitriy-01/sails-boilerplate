@@ -35,9 +35,39 @@
 </head>
 
 <body>
+
+<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Project name</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <div class="navbar-form navbar-right">
+                <a href="/login" class="btn btn-default">Sign In</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/register">Sign Up</a></li>
+            </ul>
+        </div>
+        <!--/.navbar-collapse -->
+    </div>
+</div>
+
 {{{body}}}
 
+<div class="container">
+    <hr>
 
+    <footer>
+        <p>&copy; Company 2014</p>
+    </footer>
+</div>
 
 <!--
     Client-side Templates
@@ -97,7 +127,7 @@
 <script src="/js/dependencies/05-nv.d3.js"></script>
 <script src="/js/dependencies/06-bootstrap-growl.js"></script>
 <script src="/js/dependencies/07-jquery-ui.js"></script>
-<script src="/js/ratings-s.js"></script>
+<script src="/js/my-app.js"></script>
 <!--SCRIPTS END-->
 </body>
 </html>
