@@ -45,10 +45,11 @@ var AuthController = {
     });
 
     // Render the `auth/login.ext` view
-    res.view({
-      providers : providers
-    , errors    : req.flash('error')
-    });
+      res.view({
+          providers: providers,
+          errors: req.flash('error'),
+          layout: 'layout-site'
+      });
   },
 
   /**
@@ -101,8 +102,9 @@ var AuthController = {
 
       // Render the `auth/login.ext` view
       res.view({
-          providers : providers
-          , errors    : req.flash('error')
+          providers: providers,
+          errors: req.flash('error'),
+          layout: 'layout-site'
       });
   },
 
@@ -133,7 +135,7 @@ var AuthController = {
    * @param {Object} res
    */
   callback: function (req, res) {
-    function tryAgain () {
+    function tryAgain (error) {
       // If an error was thrown, redirect the user to the login which should
       // take care of rendering the error messages.
         if (typeof error === 'object' && error !== null) {

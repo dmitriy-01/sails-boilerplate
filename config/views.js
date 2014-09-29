@@ -59,7 +59,6 @@ module.exports.views = {
 
     layout: 'layouts/layout',
 
-    partials: 'partials'
 
     /****************************************************************************
      *                                                                           *
@@ -78,6 +77,57 @@ module.exports.views = {
      * layout: 'layouts/internal'                                                *
      *                                                                           *
      ****************************************************************************/
+
+    partials: 'partials',
+
+    helpers: {
+        debug: function (optionalValue) {
+            if (optionalValue) {
+                if (optionalValue == '*') {
+                    console.log("Current Context");
+                    console.log("====================");
+                    console.log(this);
+                } else {
+                    console.log("Value");
+                    console.log("====================");
+                    console.log(optionalValue);
+                }
+            } else {
+                console.log("Value is undefined");
+            }
+        },
+        isInRole: function (role, user, options) {
+            var roles = role.split(",");
+
+            if (user && _.indexOf(roles, user.role) >= 0) {
+                return options.fn(this);
+            } else {
+                return false;
+            }
+        },
+        ifCond: function (v1, operator, v2, options) {
+            switch (operator) {
+                case '==':
+                    return (v1 == v2) ? options.fn(this) : options.inverse(this);
+                case '===':
+                    return (v1 === v2) ? options.fn(this) : options.inverse(this);
+                case '<':
+                    return (v1 < v2) ? options.fn(this) : options.inverse(this);
+                case '<=':
+                    return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+                case '>':
+                    return (v1 > v2) ? options.fn(this) : options.inverse(this);
+                case '>=':
+                    return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+                case '&&':
+                    return (v1 && v2) ? options.fn(this) : options.inverse(this);
+                case '||':
+                    return (v1 || v2) ? options.fn(this) : options.inverse(this);
+                default:
+                    return options.inverse(this);
+            }
+        }
+    }
 
 
 };

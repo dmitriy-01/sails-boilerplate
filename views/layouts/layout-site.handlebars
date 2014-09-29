@@ -38,26 +38,28 @@
 
 {{> nav}}
 
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-            {{> sidebar}}
-        </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <div id="ajax-alert"></div>
-            {{#if errors}}
-                <div class="alert alert-danger alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span
-                            class="sr-only">Close</span></button>
-                    {{#each errors}}
-                        <div>{{this}}</div>
-                    {{/each}}
-                </div>
-            {{/if}}
-            {{{ body }}}
+{{#if errors}}
+    <br />
+    <div class="container">
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span
+                    class="sr-only">Close</span></button>
+            {{#each errors}}
+                <div>{{this}}</div>
+            {{/each}}
         </div>
     </div>
+{{/if}}
+
+{{{ body }}}
+
+
+<div class="container">
+    <hr>
+
+    <footer>
+        <p>&copy; Company 2014</p>
+    </footer>
 </div>
 
 <!--

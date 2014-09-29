@@ -11,7 +11,9 @@ module.exports = {
      * `SiteController.index()`
      */
     index: function (req, res) {
-        res.view();
+        res.view({
+            layout: 'layout-site'
+        });
     }
 };
 
