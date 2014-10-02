@@ -9,6 +9,13 @@
             </button>
             <a class="navbar-brand" href="/">Project name</a>
         </div>
+        {{#if session.authenticated}}
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/logout">Log Out</a></li>
+            </ul>
+        </div>
+        {{else}}
         <div class="navbar-collapse collapse">
             <div class="navbar-form navbar-right">
                 <a href="/login" class="btn btn-default">Sign In</a>
@@ -17,6 +24,7 @@
                 <li><a href="/register">Sign Up</a></li>
             </ul>
         </div>
+        {{/if}}
         <!--/.navbar-collapse -->
     </div>
 </div>
