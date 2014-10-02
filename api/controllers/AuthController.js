@@ -68,6 +68,7 @@ var AuthController = {
    */
   logout: function (req, res) {
     req.logout();
+    req.session.authenticated = false;
     res.redirect('/');
   },
 
